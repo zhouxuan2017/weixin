@@ -5,8 +5,9 @@ const marked = require('marked');
 const mdb = require('./initdb');
 
 var app = new titbit({
-  debug: true, //开启调式模式，会输出错误信息
-  showLoadInfo: false,
+  //debug: true, //开启调式模式，会输出错误信息
+  //showLoadInfo: false,
+  daemon:true
 });
 
 var {router} = app; //相当于 var router = app.router;
@@ -14,7 +15,7 @@ var {router} = app; //相当于 var router = app.router;
 var _dbpath = './mddata';
 
 //填写自己的域名
-mdb.domain = 'awy.d5h5.com';
+mdb.domain = 'httPs://zhouxuan.czwhcloud.cn';
 mdb.loadData(_dbpath);
 
 
@@ -71,4 +72,4 @@ router.get('/a',async c=>{
   c.res.body=c.query;
 })
 
-app.run(8000, 'localhost');
+app.daemon(8001, 'localhost');
