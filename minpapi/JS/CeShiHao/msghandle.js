@@ -68,11 +68,32 @@ function evenMsg(wxmsg,retmsg){
             console.log(wxmsg.FromUserName,'取消关注');
             break;
         case 'CLICK':
-            retmsg.msg = wxmsg.EventKey;
+            // retmsg.msg = wxmsg.EventKey;
+            retmsg.msg=myself();
+              retmsg.msgtype='text';
             return formatMsg(retmsg);
         case 'VIEW':
             console.log('用户浏览',wxmsg.EventKey);
             break;
+        case 'pic-weixin':
+                retmsg.msgtype=wxmsg.MsgType;
+                retmsg.msg=wxmsg.MediaId;
+                return formatMsg(retmsg);
+                break;
+        case 'pic_sysphoto':
+                retmsg.msgtype=wxmsg.MsgType;
+                retmsg.msg=wxmsg.MediaId;
+                return formatMsg(retmsg);
+                break;
+        case 'pic_photo_or_album':
+                retmsg.msgtype=wxmsg.MsgType;
+                retmsg.msg=wxmsg.MediaId;
+                return formatMsg(retmsg);
+                break;
+       case 'location_select':
+           retmsg.msg=EventKey;
+           return formatMsg(retmsg);
+                
         default:
             return '';
     }

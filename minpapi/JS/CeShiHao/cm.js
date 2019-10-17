@@ -11,14 +11,35 @@ var token_api=`https://api.weixin.qq.com/cgi-bin/token`
 var menu_data={
     button:[
         {
-           name:"Linux",
-           type:'view',
-           url:'https://www.linux.org'
+          name:'发图',
+          type:'pic_weixin',
+          key:'my-image',
+          sub_button:[
+              {name:'微信相册发图',type:'pic_weixin',key:'image'},
+              {name:'系统拍照发图',type:'pic_sysphoto',key:'paizhao'},
+              {name:'拍照或相册发图',type:'pic_photo_or_album',key:'ppp'}
+          ]
         },
         {
-           name:'Send',
+           name:"跳转",
+           type:'view',
+           url:'https://www.linux.org',
+           sub_button:[
+            {name:'linux',type:'view',url:'https://www.linux.org'},
+            {name:'百度',type:'view',url:'https://www.baidu.com'},
+            {name:'搜狗',type:'view',url:'http://www.soso.com'},
+            {name:'github',type:'view',url:'https://github.com/zhouxuan2017/weixin/tree/master/zuoye'}
+        ]
+        },
+        {
+           name:'点击',
            type:'click',
-           key:'send-msg'
+           key:'这是我的key值，我以原样返回了',
+           sub_button:[
+            {name:'扫码',type:'scancode_push',key:'push'},
+            {name:'位置',type:'location_select',key:"系统已收到您的相关位置，请稍等"},
+            {name:'关于',type:'click',key:'你好，我是2017级软件工程六班周宣，专业方向是H5'}
+        ]
         }
     ]
 }
