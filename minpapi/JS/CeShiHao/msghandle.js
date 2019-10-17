@@ -91,8 +91,9 @@ function evenMsg(wxmsg,retmsg){
                 return formatMsg(retmsg);
                 break;
        case 'location_select':
-           retmsg.msg=EventKey;
-           return formatMsg(retmsg);
+            retmsg.msgtype=wxmsg.MsgType;
+                retmsg.msg=wxmsg.MediaId;
+                return formatMsg(retmsg);
                 
         default:
             return '';
