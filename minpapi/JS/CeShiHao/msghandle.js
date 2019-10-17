@@ -83,7 +83,7 @@ function evenMsg(wxmsg,retmsg){
         case 'pic_sysphoto':
                 retmsg.msgtype=wxmsg.MsgType;
                 retmsg.msg=wxmsg.MediaId;
-                return formatMsg(retmsg);
+                return formatMsg(retmsg);  
                 break;
         case 'pic_photo_or_album':
                 retmsg.msgtype=wxmsg.MsgType;
