@@ -17,7 +17,7 @@ app.use(async(c,next)=>{
     console.log('middleware2');
 });
 // ,{group:'post',method:['POST','PUT']}
-//ä»Ž4.1.3ç‰ˆæœ¬ä»¥åŽï¼Œå¯ä»¥ç›´æŽ¥ä½¿ç”¨app.getç­‰æ·»åŠ è·¯ç”±
+//´Ó4.1.3°æ±¾ÒÔºó£¬¿ÉÒÔÖ±½ÓÊ¹ÓÃapp.getµÈÌí¼ÓÂ·ÓÉ
 app.get('/',async c=>{
     c.res.body='success';
 })
