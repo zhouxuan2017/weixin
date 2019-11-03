@@ -4,7 +4,8 @@ const ufilter=require('./userfilter');
 
 
 var app=new titbit({
-    debug:true
+    // debug:true
+    daemon:true
 });
 var pgdb=new pg.Pool({
     host:'127.0.0.1',
@@ -99,7 +100,7 @@ app.delete('/user/:id',async c=>{
     
 })
 //运行一个服务
-app.run(8001);
+app.daemon(8005);
 
 
 /*
